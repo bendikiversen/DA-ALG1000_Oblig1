@@ -22,11 +22,14 @@ public class SingleLinkedList
 
 	void removeFirst() //1
 	{
-		if(head.next == null)
-			head = null;
-		else
-			head = head.next;
-		elementCount--;
+		if(head != null)
+		{
+			if(head.next == null)
+				head = null;
+			else
+				head = head.next;
+			elementCount--;
+		}
 	}
 
 	void appendFirst(int value) //5
@@ -46,7 +49,6 @@ public class SingleLinkedList
 		{
 			list[i] = cPtr.value;
 			cPtr = cPtr.next;
-
 		}
 		return list;
 	}
