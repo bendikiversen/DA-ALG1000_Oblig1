@@ -55,7 +55,7 @@ public class SingleLinkedList
 		return list;
 	}
 
-	int resetList()
+	int initList()
 	{
 		int oldElementCount = elementCount;
 		head = null;

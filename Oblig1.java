@@ -11,14 +11,6 @@ public class Oblig1
 
 		SingleLinkedList myList = new SingleLinkedList();
 
-		/*
-		myList.appendFirst(3);
-		myList.appendFirst(2);
-		myList.appendFirst(1);
-		myList.removeFirst();
-		myList.appendFirst(4);
-		*/
-
 		//Node cPtr = myList.getHead();
 
 		//Debug for printing av liste
@@ -37,11 +29,9 @@ public class Oblig1
 			+ "9:\tPrint length of list.\n"
 			+ "12:\tPrint list contents. 5 elements per line.\n"
 			+ "13:\tErase list. Prints number of deleted elements.\n"
-			+ "0: Exit program");
-			System.out.println("========================================================");
+			+ "0: Exit program\n");
 			System.out.print("Select option: ");
 			option = input.nextInt();
-			System.out.println();
 
 			switch(option)
 			{
@@ -50,7 +40,6 @@ public class Oblig1
 						System.out.println("Removed first element\n");
 					else
 						System.out.println("No first element\n");
-
 					break;
 				case 5:
 					System.out.print("Enter integer: ");
@@ -60,13 +49,13 @@ public class Oblig1
 					System.out.println(data + " appended to the beginning of list\n");
 					break;
 				case 9:
-					System.out.println("Length: " + myList.getLength()+"\n");
+					System.out.println("The list has length: " + myList.getLength()+"\n");
 					break;
 				case 12:
 					System.out.println(java.util.Arrays.toString(myList.getList())+ "\n");
 					break;
 				case 13:
-					System.out.println("Initialized list, removed " + myList.resetList() + " elements.");
+					System.out.println("Initialized list, removed " + myList.initList() + " elements.");
 					break;
 				case 0:
 					System.out.println("Program stops.\n");
@@ -75,7 +64,6 @@ public class Oblig1
 					System.out.println("Invalid option.\n");
 					break;
 			}
-
 		} while(option != 0);
-	}
-}
+	}//End of main
+}//End of Oblig1
