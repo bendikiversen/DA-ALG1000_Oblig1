@@ -20,11 +20,12 @@ public class Oblig1
 		Node cPtr = myList.getHead();
 
 		//Debug for printing av liste
-		for(int i = 0; i<myList.getLength(); i++)
+		/* for(int i = 0; i<myList.getLength(); i++)
 		{
 			System.out.println(cPtr + ": " + cPtr.value);
 			cPtr = cPtr.next;
 		}
+		*/
 
 		System.out.println(java.util.Arrays.toString(myList.getList()));
 		System.out.println(java.util.Arrays.toString(myList.getList()));
