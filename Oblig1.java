@@ -9,7 +9,27 @@ public class Oblig1
 
 		System.out.println("SingleLinkedList Program\n");
 
-		do
+		SingleLinkedList myList = new SingleLinkedList();
+		myList.appendFirst(3);
+		myList.appendFirst(2);
+		myList.appendFirst(1);
+		myList.removeFirst();
+		myList.appendFirst(4);
+		System.out.println("Length: " + myList.getLength()+"\n");
+
+		Node cPtr = myList.getHead();
+
+		//Debug for printing av liste
+		for(int i = 0; i<myList.getLength(); i++)
+		{
+			System.out.println(cPtr + ": " + cPtr.value);
+			cPtr = cPtr.next;
+		}
+
+		System.out.println(java.util.Arrays.toString(myList.getList()));
+		System.out.println(java.util.Arrays.toString(myList.getList()));
+
+		/* do
 		{
 			System.out.println("1:\tDelete first element.\n"
 			+ "5:\tAppend element with value at start of list.\n"
@@ -46,5 +66,7 @@ public class Oblig1
 			}
 
 		} while(option != 0);
+		*/
+
 	}
 }
