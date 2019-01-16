@@ -20,7 +20,7 @@ public class SingleLinkedList
 		return elementCount;
 	}
 
-	void removeFirst() //1
+	boolean removeFirst() //1
 	{
 		if(head != null)
 		{
@@ -29,7 +29,9 @@ public class SingleLinkedList
 			else
 				head = head.next;
 			elementCount--;
+			return true;
 		}
+		return false;
 	}
 
 	void appendFirst(int value) //5
