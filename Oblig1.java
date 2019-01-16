@@ -11,16 +11,6 @@ public class Oblig1
 
 		SingleLinkedList myList = new SingleLinkedList();
 
-		//Node cPtr = myList.getHead();
-
-		//Debug for printing av liste
-		/* for(int i = 0; i<myList.getLength(); i++)
-		{
-			System.out.println(cPtr + ": " + cPtr.value);
-			cPtr = cPtr.next;
-		}
-		*/
-
 		do
 		{
 			System.out.println("========================================================");
