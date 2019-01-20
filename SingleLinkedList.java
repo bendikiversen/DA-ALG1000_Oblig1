@@ -10,40 +10,41 @@ public class SingleLinkedList
 		elementCount = 0;
 	}
 
+	//Returns address of head (first node in list)
 	Node getHead()
 	{
 		return head;
 	}
 
-	int getLength()
+	boolean removeFirst() //1: Remove first element in list
+	{
+		if(head != null) //Check that the list has a head
+		{
+			if(head.next == null)	//No following node after head
+				head = null;
+			else					//Head node has a following node
+				head = head.next;
+			elementCount--; //Element count decreases by one
+			return true; //Operation successful
+		}
+		return false; //Operation failed (empty list)
+	}
+
+	void appendFirst(int value) //5: Append node with value to beginning of list
+	{
+		if(head == null)	//If the list has no head node
+			head = new Node(value, null);
+		else				//If the list has no head node
+			head = new Node(value, head);
+		elementCount++; //Increase element count by one
+	}
+
+	int getLength() //9: Print list length
 	{
 		return elementCount;
 	}
 
-	boolean removeFirst() //1
-	{
-		if(head != null)
-		{
-			if(head.next == null)
-				head = null;
-			else
-				head = head.next;
-			elementCount--;
-			return true;
-		}
-		return false;
-	}
-
-	void appendFirst(int value) //5
-	{
-		if(head == null)
-			head = new Node(value, null);
-		else
-			head = new Node(value, head);
-		elementCount++;
-	}
-
-	int[] getList()
+	int[] getList() //12: Print list values, 5 elements per line
 	{
 		int[] list = new int[elementCount];
 		Node cPtr = head;
@@ -55,7 +56,7 @@ public class SingleLinkedList
 		return list;
 	}
 
-	int initList()
+	int initList() //13: Remove all list elements. Print number of deleted elements
 	{
 		int oldElementCount = elementCount;
 		head = null;
