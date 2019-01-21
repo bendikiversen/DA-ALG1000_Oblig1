@@ -37,13 +37,13 @@ public class Oblig1
 					if(myList.removeFirst())
 						System.out.println("Removed first element.\n");
 					else
-						System.out.println("No first element.\n");
+						System.out.println("List is empty.\n");
 					break;
 				case 2:
 					if(myList.removeLast())
 						System.out.println("Removed last element.\n");
 					else
-						System.out.println("No last element.\n");
+						System.out.println("List is empty.\n");
 					break;
 				case 3:
 					System.out.print("Enter integer remove (first occurence): ");
