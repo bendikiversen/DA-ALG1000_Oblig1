@@ -30,6 +30,60 @@ public class SingleLinkedList
 		return false; //Operation failed (empty list)
 	}
 
+	boolean removeLast() //2: Remove last element in list
+	{
+		if(head != null)
+		{
+			if(head.next == null)
+			{
+				head = null;
+			}
+			else
+			{
+				Node cPtr = head;
+				while(cPtr.next != null)
+				{
+					cPtr = cPtr.next;
+				}
+				cPtr = null;
+			}
+			elementCount--;
+			return true;
+		}
+		return false;
+	}
+
+	void removeFirstValue(int target)
+	{
+		if(head != null)
+			if(head.next == null && head.value == target)
+			{
+				head = null;
+				elementCount--;
+			}
+			else
+			{
+				Node cPtr = head;
+				while(cPtr.next.value != target)
+					if(cPtr.next != null)
+						cPtr = cPtr.next;
+
+				if(cPtr.value == target)
+				{
+					if(cPtr.next != null)
+					{
+						cPtr.next = cPtr.next.next;
+					}
+					else
+					{
+						cPtr = null;
+					}
+					elementCount--;
+				}
+			}
+
+	}
+
 	void appendFirst(int value) //5: Append node with value to beginning of list
 	{
 		if(head == null)	//If the list has no head node

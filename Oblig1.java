@@ -21,6 +21,8 @@ public class Oblig1
 			//Print menu with options and input
 			System.out.println("========================================================");
 			System.out.println("1:\tDelete first element in list.\n"
+			+ "2:\tDelete last element in list.\n"
+			+ "3:\tDelete first occurence of given value.\n"
 			+ "5:\tAppend element with value at start of list.\n"
 			+ "9:\tPrint length of list.\n"
 			+ "12:\tPrint list contents, 5 elements per line.\n"
@@ -37,8 +39,20 @@ public class Oblig1
 					else
 						System.out.println("No first element.\n");
 					break;
+				case 2:
+					if(myList.removeLast())
+						System.out.println("Removed last element.\n");
+					else
+						System.out.println("No last element.\n");
+					break;
+				case 3:
+					System.out.print("Enter integer remove (first occurence): ");
+					data = input.nextInt();
+					System.out.println();
+					myList.removeFirstValue(data);
+					break;
 				case 5:
-					System.out.print("Enter integer: ");
+					System.out.print("Enter integer to append: ");
 					data = input.nextInt();
 					System.out.println();
 					myList.appendFirst(data);
