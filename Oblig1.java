@@ -37,24 +37,25 @@ public class Oblig1
 					if(myList.removeFirst())
 						System.out.println("Removed first element.\n");
 					else
-						System.out.println("List is empty.\n");
+						System.out.println("List is empty, cannot remove first element.\n");
 					break;
 				case 2:
 					if(myList.removeLast())
 						System.out.println("Removed last element.\n");
 					else
-						System.out.println("List is empty.\n");
+						System.out.println("List is empty, cannot remove last element.\n");
 					break;
 				case 3:
-					System.out.print("Enter integer remove (first occurence): ");
+					System.out.print("Enter integer remove (first occurrence): ");
 					data = input.nextInt();
-					System.out.println();
-					myList.removeFirstValue(data);
+					if(myList.removeFirstValue(data))
+						System.out.println("First occurrence of " + data + " removed.\n");
+					else
+						System.out.println(data + " was not found in the list\n");
 					break;
 				case 5:
 					System.out.print("Enter integer to append: ");
 					data = input.nextInt();
-					System.out.println();
 					myList.appendFirst(data);
 					System.out.println(data + " appended to the beginning of list.\n");
 					break;
@@ -62,14 +63,7 @@ public class Oblig1
 					System.out.println("The list has " + myList.getLength()+" elements.\n");
 					break;
 				case 12:
-					int[] tempArray = myList.getList();
-					for(int i=0; i<tempArray.length; i++)
-					{
-						if(i%5==0)
-							System.out.println();
-						System.out.print(tempArray[i] + " ");
-
-					}
+					printArray(myList.getList());
 					System.out.println();
 					break;
 				case 13:
@@ -85,4 +79,17 @@ public class Oblig1
 			}
 		} while(option != 0);
 	}//End of main
+
+	static void printArray(int[] array)
+	{
+		if(array.length != 0)
+			for(int i=0; i<array.length; i++)
+			{
+				if(i%5==0)
+					System.out.println();
+				System.out.print(array[i] + " ");
+			}
+		else
+			System.out.println("List is empty, nothing to print.");
+	}//End of printArray
 }//End of Oblig1

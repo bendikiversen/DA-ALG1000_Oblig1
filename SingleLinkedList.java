@@ -53,7 +53,7 @@ public class SingleLinkedList
 		return false;
 	}
 
-	void removeFirstValue(int target)
+	boolean removeFirstValue(int target) //3: remove first occurrence of given value
 	{
 		if(head != null)
 			if(head.next == null && head.value == target)
@@ -64,24 +64,22 @@ public class SingleLinkedList
 			else
 			{
 				Node cPtr = head;
-				while(cPtr.next.value != target)
+				while(cPtr.value != target)
+				{
 					if(cPtr.next != null)
 						cPtr = cPtr.next;
-
+				}
 				if(cPtr.value == target)
 				{
 					if(cPtr.next != null)
-					{
 						cPtr.next = cPtr.next.next;
-					}
 					else
-					{
 						cPtr = null;
-					}
 					elementCount--;
+					return true;
 				}
 			}
-
+		return false;
 	}
 
 	void appendFirst(int value) //5: Append node with value to beginning of list
