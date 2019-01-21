@@ -56,29 +56,39 @@ public class SingleLinkedList
 	boolean removeFirstValue(int target) //3: remove first occurrence of given value
 	{
 		if(head != null)
-			if(head.next == null && head.value == target)
+		{
+			if(head.value == target)
 			{
-				head = null;
+				if(head.next == null)
+					head = null;
+				else
+					head = head.next;
+
 				elementCount--;
 				return true;
 			}
+			else if(head.next == null)
+				return false;
 			else
 			{
 				Node cPtr = head;
-				while(cPtr.value != target)
-					if(cPtr.next != null)
-						cPtr = cPtr.next;
+				while(cPtr.next.value != target && cPtr.next != null)
+					cPtr = cPtr.next;
 
-				if(cPtr.value == target)
+				if(cPtr.next.value == target)
 				{
-					if(cPtr.next != null)
-						cPtr.next = cPtr.next.next;
-					else
-						cPtr = null;
+					cPtr.next = cPtr.next.next;
+					elementCount--;
+					return true;
+				}
+				else if(cPtr.value == target && cPtr.next == null)
+				{
+					cPtr = null;
 					elementCount--;
 					return true;
 				}
 			}
+		}
 		return false;
 	}
 
