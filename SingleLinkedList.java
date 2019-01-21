@@ -60,15 +60,15 @@ public class SingleLinkedList
 			{
 				head = null;
 				elementCount--;
+				return true;
 			}
 			else
 			{
 				Node cPtr = head;
 				while(cPtr.value != target)
-				{
 					if(cPtr.next != null)
 						cPtr = cPtr.next;
-				}
+
 				if(cPtr.value == target)
 				{
 					if(cPtr.next != null)
@@ -84,9 +84,9 @@ public class SingleLinkedList
 
 	void appendFirst(int value) //5: Append node with value to beginning of list
 	{
-		if(head == null)	//If the list has no head node
+		if(head == null)	//If the list has no head node, create it
 			head = new Node(value, null);
-		else				//If the list has no head node
+		else				//If the list has a head node, replace it
 			head = new Node(value, head);
 		elementCount++; //Increase element count by one
 	}
