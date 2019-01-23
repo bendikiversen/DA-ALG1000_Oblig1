@@ -15,19 +15,12 @@ public class Oblig1
 		//Will create a linked list pointing to null (head), with 0 elements
 		SingleLinkedList myList = new SingleLinkedList();
 
+		printMenu();
+
 		//Do-while loop for interactive menu,repeats till user-exit.
 		do
 		{
 			//Print menu with options and input
-			System.out.println("========================================================");
-			System.out.println("1:\tDelete first element in list.\n"
-			+ "2:\tDelete last element in list.\n"
-			+ "3:\tDelete first occurence of given value.\n"
-			+ "5:\tAppend element with value at start of list.\n"
-			+ "9:\tPrint length of list.\n"
-			+ "12:\tPrint list contents, 5 elements per line.\n"
-			+ "13:\tInitialize list and print number of deleted elements.\n"
-			+ "0:\tExit program\n");
 			System.out.print("Select option: ");
 			option = input.nextInt();
 
@@ -70,6 +63,9 @@ public class Oblig1
 					int old = myList.initList();
 					System.out.println("Initialized list. Removed " + old + " elements.");
 					break;
+				case 100:
+					printMenu();
+					break;
 				case 0:
 					System.out.println("Program stops.\n");
 					break;
@@ -92,4 +88,18 @@ public class Oblig1
 		else
 			System.out.println("List is empty, nothing to print.");
 	}//End of printArray
+
+	static void printMenu()
+	{
+		System.out.println("========================================================");
+					System.out.println("1:\tDelete first element in list.\n"
+					+ "2:\tDelete last element in list.\n"
+					+ "3:\tDelete first occurence of given value.\n"
+					+ "5:\tAppend element with value at start of list.\n"
+					+ "9:\tPrint length of list.\n"
+					+ "12:\tPrint list contents, 5 elements per line.\n"
+					+ "13:\tInitialize list and print number of deleted elements.\n"
+					+ "100:\tShow this menu.\n"
+					+ "0:\tExit program\n");
+	}//End of printMenu
 }//End of Oblig1
