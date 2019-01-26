@@ -49,7 +49,7 @@ public class Oblig1
 				case 5:
 					System.out.print("Enter integer to append: ");
 					data = input.nextInt();
-					myList.appendFirst(data);
+					myList.insertFirst(data);
 					System.out.println(data + " appended to the beginning of list.\n");
 					break;
 				case 9:
@@ -95,10 +95,10 @@ public class Oblig1
 					System.out.println("1:\tDelete first element in list.\n"
 					+ "2:\tDelete last element in list.\n"
 					+ "3:\tDelete first occurence of given value.\n"
-					+ "5:\tAppend element with value at start of list.\n"
+					+ "5:\tInsert element with value at start of list.\n"
 					+ "9:\tPrint length of list.\n"
 					+ "12:\tPrint list contents, 5 elements per line.\n"
-					+ "13:\tInitialize list and print number of deleted elements.\n"
+					+ "13:\tInitialize list and print number of deleted elements.\n\n"
 					+ "100:\tShow this menu.\n"
 					+ "0:\tExit program\n");
 	}//End of printMenu

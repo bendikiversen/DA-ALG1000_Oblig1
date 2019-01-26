@@ -32,7 +32,7 @@ public class SingleLinkedList
 
 	boolean removeLast() //2: Remove last element in list
 	{
-		if(head != null)
+		if(elementCount > 0)
 		{
 			if(head.next == null)
 			{
@@ -92,7 +92,7 @@ public class SingleLinkedList
 		return false;
 	}
 
-	void appendFirst(int value) //5: Append node with value to beginning of list
+	void insertFirst(int value) //5: Append node with value to beginning of list
 	{
 		if(head == null)	//If the list has no head node, create it
 			head = new Node(value, null);
