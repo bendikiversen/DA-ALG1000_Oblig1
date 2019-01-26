@@ -18,7 +18,7 @@ public class SingleLinkedList
 
 	boolean removeFirst() //1: Remove first element in list
 	{
-		if(head != null) //Check that the list has a head
+		if(elementCount > 0) //Check that the list has a head
 		{
 			if(head.next == null)	//No following node after head
 				head = null;
@@ -90,6 +90,28 @@ public class SingleLinkedList
 			}
 		}
 		return false;
+	}
+
+	void removeValue(int target) //4: Remove all occurrences of given value
+	{
+		if(elementCount > 0)
+		{
+			if(elementCount == 1)
+			{
+				head = null;
+				elementCount--;
+			}
+			else
+			{
+				cPtr = head;
+				for(int i = 1; i<elementCount; i++)
+				{
+					if(cPtr.value == target)
+
+					cPtr = cPtr.next;
+				}
+			}
+		}
 	}
 
 	void insertFirst(int value) //5: Append node with value to beginning of list
