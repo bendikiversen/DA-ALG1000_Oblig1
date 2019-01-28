@@ -107,15 +107,16 @@ public class Oblig1
 
 	static void printMenu()
 	{
-		System.out.println("========================================================");
-					System.out.println("1:\tDelete first element in list.\n"
-					+ "2:\tDelete last element in list.\n"
-					+ "3:\tDelete first occurence of given value.\n"
-					+ "5:\tInsert element with value at start of list.\n"
-					+ "9:\tPrint length of list.\n"
-					+ "12:\tPrint list contents, 5 elements per line.\n"
-					+ "13:\tInitialize list and print number of deleted elements.\n\n"
-					+ "100:\tShow this menu.\n"
-					+ "0:\tExit program\n");
+		System.out.println("\n==============================================================\n"
+							+"1:\tDelete first element in list.\n"
+							+ "2:\tDelete last element in list.\n"
+							+ "3:\tDelete first occurence of given value.\n"
+							+ "5:\tInsert element with value at start of list.\n"
+							+ "9:\tPrint length of list.\n"
+							+ "12:\tPrint list contents, 5 elements per line.\n"
+							+ "13:\tInitialize list and print number of deleted elements.\n\n"
+							+ "100:\tShow this menu.\n"
+							+ "0:\tExit program\n"
+							+ "==============================================================");
 	}//End of printMenu
 }//End of Oblig1
