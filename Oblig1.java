@@ -46,14 +46,26 @@ public class Oblig1
 					else
 						System.out.println(data + " was not found in the list\n");
 					break;
+				case 4:
+					break;
 				case 5:
-					System.out.print("Enter integer to append: ");
+					System.out.print("Enter integer to insert: ");
 					data = input.nextInt();
 					myList.insertFirst(data);
-					System.out.println(data + " appended to the beginning of list.\n");
+					System.out.println(data + " inserted to the beginning of list.\n");
+					break;
+				case 6:
+					break;
+				case 7:
+					break;
+				case 8:
 					break;
 				case 9:
 					System.out.println("The list has " + myList.getLength()+" elements.\n");
+					break;
+				case 10:
+					break;
+				case 11:
 					break;
 				case 12:
 					printArray(myList.getList());
@@ -62,6 +74,10 @@ public class Oblig1
 				case 13:
 					int old = myList.initList();
 					System.out.println("Initialized list. Removed " + old + " elements.");
+					break;
+				case 14:
+					break;
+				case 15:
 					break;
 				case 100:
 					printMenu();

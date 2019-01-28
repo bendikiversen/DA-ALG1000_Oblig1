@@ -103,7 +103,7 @@ public class SingleLinkedList
 			}
 			else
 			{
-				cPtr = head;
+				Node cPtr = head;
 				for(int i = 1; i<elementCount; i++)
 				{
 					if(cPtr.value == target)
