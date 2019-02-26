@@ -175,6 +175,11 @@ public class SingleLinkedList
 		return false;
 	}
 
+	boolean addBefore(int target, int value) //8: Add node before given first occ. of given value
+	{
+
+	}
+
 	int getLength() //9: Print list length
 	{
 		return elementCount;
