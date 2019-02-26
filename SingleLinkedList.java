@@ -92,7 +92,7 @@ public class SingleLinkedList
 		return false;
 	}
 
-	void removeValue(int target) //4: Remove all occurrences of given value
+	void remove(int target) //4: Remove all occurrences of given value
 	{
 		if(elementCount > 0)
 		{
