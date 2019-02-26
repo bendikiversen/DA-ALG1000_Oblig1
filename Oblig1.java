@@ -39,7 +39,7 @@ public class Oblig1
 						System.out.println("List is empty, cannot remove last element.\n");
 					break;
 				case 3:
-					System.out.print("Enter integer remove (first occurrence): ");
+					System.out.print("Enter integer to remove (first occurrence): ");
 					data = input.nextInt();
 					if(myList.removeFirstOccurrence(data))
 						System.out.println("First occurrence of " + data + " removed.\n");
@@ -47,6 +47,12 @@ public class Oblig1
 						System.out.println(data + " was not found in the list\n");
 					break;
 				case 4:
+					System.out.print("Enter integer to remove: ");
+					data = input.nextInt();
+					if(myList.removeAll(data))
+						System.out.println("Occurrences of " + data + " removed.\n");
+					else
+						System.out.println(data + " was not found in the list\n");
 					break;
 				case 5:
 					System.out.print("Enter integer to insert: ");
@@ -86,7 +92,7 @@ public class Oblig1
 					System.out.println("Program stops.\n");
 					break;
 				default:
-					System.out.println("Non-existent option.\n");
+					System.out.println("Non-existent option. Type '100' for menu.\n");
 					break;
 			}
 		} while(option != 0);

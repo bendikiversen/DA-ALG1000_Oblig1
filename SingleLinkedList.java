@@ -20,10 +20,7 @@ public class SingleLinkedList
 	{
 		if(elementCount > 0) //Check that the list has a head
 		{
-			if(head.next == null)	//No following node after head
-				head = null;
-			else					//Head node has a following node
-				head = head.next;
+			head = head.next; //Sets head to the next node
 			elementCount--; //Element count decreases by one
 			return true; //Operation successful
 		}
@@ -32,11 +29,11 @@ public class SingleLinkedList
 
 	boolean removeLast() //2: Remove last element in list
 	{
-		if(elementCount > 0)
+		if(elementCount > 0) //Check that the list has a head
 		{
-			if(head.next == null)
+			if(head.next == null) //No following node after head
 			{
-				head = null;
+				head = null; //Removes head node
 			}
 			else
 			{
@@ -59,11 +56,7 @@ public class SingleLinkedList
 		{
 			if(head.value == target)
 			{
-				if(head.next == null)
-					head = null;
-				else
-					head = head.next;
-
+				head = head.next;
 				elementCount--;
 				return true;
 			}
@@ -92,26 +85,32 @@ public class SingleLinkedList
 		return false;
 	}
 
-	void remove(int target) //4: Remove all occurrences of given value
+	boolean removeAll(int target) //4: Remove all occurrences of given value
 	{
 		if(elementCount > 0)
 		{
-			if(elementCount == 1)
-			{
-				head = null;
-				elementCount--;
-			}
-			else
-			{
-				Node cPtr = head;
-				for(int i = 1; i<elementCount; i++)
-				{
-					if(cPtr.value == target)
+			Node placeholder = new Node(0, head);
+			Node cPtr = placeholder;
+			int origCount = elementCount;
 
-					cPtr = cPtr.next;
+			while(cPtr.next != null)
+			{
+				if(cPtr.next.value == target)
+				{
+					cPtr.next = cPtr.next.next;
+					elementCount--;
 				}
+				else
+					cPtr = cPtr.next;
 			}
+			head = placeholder.next;
+
+			if(origCount!=elementCount)
+				return true;
+			else
+				return false;
 		}
+		return false;
 	}
 
 	void addFirst(int value) //5: Append node with value to beginning of list
