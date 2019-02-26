@@ -53,7 +53,7 @@ public class SingleLinkedList
 		return false;
 	}
 
-	boolean removeFirstValue(int target) //3: remove first occurrence of given value
+	boolean removeFirstOccurrence(int target) //3: remove first occurrence of given value
 	{
 		if(head != null)
 		{
@@ -114,7 +114,7 @@ public class SingleLinkedList
 		}
 	}
 
-	void insertFirst(int value) //5: Append node with value to beginning of list
+	void addFirst(int value) //5: Append node with value to beginning of list
 	{
 		if(head == null)	//If the list has no head node, create it
 			head = new Node(value, null);

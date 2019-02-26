@@ -41,7 +41,7 @@ public class Oblig1
 				case 3:
 					System.out.print("Enter integer remove (first occurrence): ");
 					data = input.nextInt();
-					if(myList.removeFirstValue(data))
+					if(myList.removeFirstOccurrence(data))
 						System.out.println("First occurrence of " + data + " removed.\n");
 					else
 						System.out.println(data + " was not found in the list\n");
@@ -51,7 +51,7 @@ public class Oblig1
 				case 5:
 					System.out.print("Enter integer to insert: ");
 					data = input.nextInt();
-					myList.insertFirst(data);
+					myList.addFirst(data);
 					System.out.println(data + " inserted to the beginning of list.\n");
 					break;
 				case 6:
