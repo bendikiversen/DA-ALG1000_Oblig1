@@ -166,7 +166,7 @@ public class SingleLinkedList
 				}
 				else if(cPtr.value == target && cPtr.next == null) //Target is in last node
 				{
-					cPtr = new Node(value, null);
+					cPtr.next = new Node(value, null);
 					elementCount++;
 					return true;
 				}
