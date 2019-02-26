@@ -160,7 +160,7 @@ public class SingleLinkedList
 
 				if(cPtr.next.value == target) //If target is in list, with more nodes following
 				{
-					cPtr.next = new Node(value,cPtr.next.next);
+					cPtr.next.next = new Node(value,cPtr.next);
 					elementCount++;
 					return true;
 				}

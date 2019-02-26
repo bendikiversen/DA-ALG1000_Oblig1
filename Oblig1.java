@@ -74,7 +74,7 @@ public class Oblig1
 					if(myList.addAfter(dataTarget, dataValue))
 						System.out.println(dataValue + " added after " + dataTarget + ".\n");
 					else
-						System.out.println("Error\n");
+						System.out.println(dataTarget + " was not found, no integer added.\n");
 					break;
 				case 8:
 					break;
