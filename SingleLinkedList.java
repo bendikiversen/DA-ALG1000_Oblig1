@@ -125,7 +125,7 @@ public class SingleLinkedList
 
 	void addLast(int value) //6: Add node with value to end of list
 	{
-		if(head == null)
+		if(head == null) //If the list has no head node, that is the end
 		{
 			head = new Node(value, null);
 			elementCount++;
@@ -135,9 +135,44 @@ public class SingleLinkedList
 			Node cPtr = head;
 			while(cPtr.next != null)
 				cPtr = cPtr.next;
-			cPtr.next = new Node(value, null);
+			cPtr.next = new Node(value, null); //Create node after last node
 			elementCount++;
 		}
+	}
+
+	boolean addAfter(int target, int value) //7: Add node after given first occ. of given value
+	{
+		if(head != null)
+		{
+			if(head.value == target) //If target is the first node
+			{
+				head.next = new Node(value, head.next);
+				elementCount++;
+				return true;
+			}
+			else if(head.next == null) //If list only contains mismatching head
+				return false;
+			else
+			{
+				Node cPtr = head;
+				while(cPtr.next.value != target && cPtr.next != null) //Iterate to target
+					cPtr = cPtr.next;
+
+				if(cPtr.next.value == target) //If target is in list, with more nodes following
+				{
+					cPtr.next = new Node(value,cPtr.next.next);
+					elementCount++;
+					return true;
+				}
+				else if(cPtr.value == target && cPtr.next == null) //Target is in last node
+				{
+					cPtr = new Node(value, null);
+					elementCount++;
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	int getLength() //9: Print list length

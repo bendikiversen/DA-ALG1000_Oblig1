@@ -67,6 +67,14 @@ public class Oblig1
 					System.out.println(data + " inserted to the end of list.\n");
 					break;
 				case 7:
+					System.out.print("Enter integer to add after: ");
+					int dataTarget = input.nextInt();
+					System.out.print("Integer to be added: ");
+					int dataValue = input.nextInt();
+					if(myList.addAfter(dataTarget, dataValue))
+						System.out.println(dataValue + " added after " + dataTarget + ".\n");
+					else
+						System.out.println("Error\n");
 					break;
 				case 8:
 					break;
