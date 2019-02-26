@@ -54,27 +54,27 @@ public class SingleLinkedList
 	{
 		if(head != null)
 		{
-			if(head.value == target)
+			if(head.value == target) //If target is the first node
 			{
 				head = head.next;
 				elementCount--;
 				return true;
 			}
-			else if(head.next == null)
+			else if(head.next == null) //If list only contains mismatching head
 				return false;
 			else
 			{
 				Node cPtr = head;
-				while(cPtr.next.value != target && cPtr.next != null)
+				while(cPtr.next.value != target && cPtr.next != null) //Iterate to target
 					cPtr = cPtr.next;
 
-				if(cPtr.next.value == target)
+				if(cPtr.next.value == target) //If target is in list, with more nodes following
 				{
 					cPtr.next = cPtr.next.next;
 					elementCount--;
 					return true;
 				}
-				else if(cPtr.value == target && cPtr.next == null)
+				else if(cPtr.value == target && cPtr.next == null) //Target is in last node
 				{
 					cPtr = null;
 					elementCount--;
@@ -89,13 +89,13 @@ public class SingleLinkedList
 	{
 		if(elementCount > 0)
 		{
-			Node placeholder = new Node(0, head);
+			Node placeholder = new Node(0, head); //Take out head to another temp. list.
 			Node cPtr = placeholder;
 			int origCount = elementCount;
 
 			while(cPtr.next != null)
 			{
-				if(cPtr.next.value == target)
+				if(cPtr.next.value == target) //Remove target and decrease count
 				{
 					cPtr.next = cPtr.next.next;
 					elementCount--;
@@ -104,6 +104,7 @@ public class SingleLinkedList
 					cPtr = cPtr.next;
 			}
 			head = placeholder.next;
+			placeholder = null;
 
 			if(origCount!=elementCount)
 				return true;
@@ -113,13 +114,30 @@ public class SingleLinkedList
 		return false;
 	}
 
-	void addFirst(int value) //5: Append node with value to beginning of list
+	void addFirst(int value) //5: Add node with value to beginning of list
 	{
 		if(head == null)	//If the list has no head node, create it
 			head = new Node(value, null);
 		else				//If the list has a head node, replace it
 			head = new Node(value, head);
 		elementCount++; //Increase element count by one
+	}
+
+	void addLast(int value) //6: Add node with value to end of list
+	{
+		if(head == null)
+		{
+			head = new Node(value, null);
+			elementCount++;
+		}
+		else
+		{
+			Node cPtr = head;
+			while(cPtr.next != null)
+				cPtr = cPtr.next;
+			cPtr.next = new Node(value, null);
+			elementCount++;
+		}
 	}
 
 	int getLength() //9: Print list length

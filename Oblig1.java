@@ -55,12 +55,16 @@ public class Oblig1
 						System.out.println(data + " was not found in the list\n");
 					break;
 				case 5:
-					System.out.print("Enter integer to insert: ");
+					System.out.print("Enter integer to add (beginning): ");
 					data = input.nextInt();
 					myList.addFirst(data);
 					System.out.println(data + " inserted to the beginning of list.\n");
 					break;
 				case 6:
+					System.out.print("Enter integer to add (end): ");
+					data = input.nextInt();
+					myList.addLast(data);
+					System.out.println(data + " inserted to the end of list.\n");
 					break;
 				case 7:
 					break;
