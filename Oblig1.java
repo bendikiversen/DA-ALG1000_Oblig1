@@ -82,15 +82,22 @@ public class Oblig1
 					System.out.println("The list has " + myList.getLength()+" elements.\n");
 					break;
 				case 10:
+					if(myList.checkCount())
+						System.out.println("Element count is correct.\n");
+					else
+						System.out.println("The programmer made a mistake: elementCount is off!");
 					break;
 				case 11:
+					System.out.print("Enter integer to check for: ");
+					data = input.nextInt();
+					System.out.println("The number '"+ data + "' was found " + myList.numOfTarget(data)+" times.\n");
 					break;
 				case 12:
-					printArray(myList.getList());
+					printArray(myList.toArray());
 					System.out.println();
 					break;
 				case 13:
-					int old = myList.initList();
+					int old = myList.clear();
 					System.out.println("Initialized list. Removed " + old + " elements.");
 					break;
 				case 14:

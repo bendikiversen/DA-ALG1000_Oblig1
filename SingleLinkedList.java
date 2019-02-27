@@ -177,7 +177,7 @@ public class SingleLinkedList
 
 	boolean addBefore(int target, int value) //8: Add node before given first occ. of given value
 	{
-
+	return true;
 	}
 
 	int getLength() //9: Print list length
@@ -185,7 +185,42 @@ public class SingleLinkedList
 		return elementCount;
 	}
 
-	int[] getList() //12: Print list values, 5 elements per line
+	boolean checkCount() //10: Check number of nodes vs variable elementCount
+	{
+		int counter = 0;
+		if(head!=null)
+		{
+
+			Node cPtr = head;
+			counter = 1;
+			while(cPtr.next != null)
+			{
+				counter++;
+				cPtr = cPtr.next;
+			}
+		}
+		return counter==elementCount;
+	}
+
+	int numOfTarget(int target)
+	{
+		int num = 0;
+		if(head != null)
+		{
+		Node cPtr = head;
+			if(head.value == target)
+				num++;
+			while(cPtr.next != null)
+			{
+				if(cPtr.value == target)
+					num++;
+				cPtr = cPtr.next;
+			}
+		}
+		return num;
+	}
+
+	int[] toArray() //12: Print list values, 5 elements per line. Creates an returnable array.
 	{
 		int[] list = new int[elementCount];
 		Node cPtr = head;
@@ -197,7 +232,7 @@ public class SingleLinkedList
 		return list;
 	}
 
-	int initList() //13: Remove all list elements. Print number of deleted elements
+	int clear() //13: Remove all list elements. Print number of deleted elements
 	{
 		int oldElementCount = elementCount;
 		head = null;
