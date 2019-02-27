@@ -101,6 +101,7 @@ public class Oblig1
 					System.out.println("Initialized list. Removed " + old + " elements.");
 					break;
 				case 14:
+					System.out.println(myList.max());
 					break;
 				case 15:
 					break;
@@ -143,7 +144,7 @@ public class Oblig1
 							+ " 8:\tInsert element before given value in list.\n"
 							+ " 9:\tPrint length of list.\n"
 							+ " 10:\tCheck list length.\n"
-							+ " 11:\tCount number of elements with value.\n"
+							+ " 11:\tCount occurences of given value.\n"
 							+ " 12:\tPrint list contents, 5 elements per line.\n"
 							+ " 13:\tInitialize list and print number of deleted elements.\n"
 							+ " 14:\tFind and print largest elements value.\n"

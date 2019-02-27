@@ -202,7 +202,7 @@ public class SingleLinkedList
 		return counter==elementCount;
 	}
 
-	int numOfTarget(int target)
+	int numOfTarget(int target) //11: Count occurences of given value
 	{
 		int num = 0;
 		if(head != null)
@@ -238,5 +238,23 @@ public class SingleLinkedList
 		head = null;
 		elementCount = 0;
 		return oldElementCount;
+	}
+
+	int max() //14: Return the largest numbera
+	{
+		if(head != null)
+		{
+			int temp = head.value;
+			Node cPtr = head;
+
+			while(cPtr.next != null)
+			{
+				if(cPtr.value > temp)
+					temp = cPtr.value;
+				cPtr = cPtr.next;
+			}
+			return temp;
+		}
+		return 0;
 	}
 }
