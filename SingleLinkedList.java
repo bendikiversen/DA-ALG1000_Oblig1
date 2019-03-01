@@ -177,7 +177,31 @@ public class SingleLinkedList
 
 	boolean addBefore(int target, int value) //8: Add node before given first occ. of given value
 	{
-	return true;
+		if(head != null)
+		{
+			if(head.value == target) //If target is the first node
+			{
+				head = new Node(value, head);
+				elementCount++;
+				return true;
+			}
+			else if(head.next == null) //If list only contains mismatching head
+				return false;
+			else
+			{
+				Node cPtr = head;
+				while(cPtr.next.value != target)
+					cPtr = cPtr.next;
+
+				if(cPtr.next.value == target)
+				{
+					cPtr.next = new Node(value, cPtr.next);
+					elementCount++;
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	int getLength() //9: Print list length
@@ -240,7 +264,7 @@ public class SingleLinkedList
 		return oldElementCount;
 	}
 
-	int max() //14: Return the largest numbera
+	Integer max() //14: Return the largest number
 	{
 		if(head != null)
 		{
@@ -255,6 +279,24 @@ public class SingleLinkedList
 			}
 			return temp;
 		}
-		return 0;
+		return null;
+	}
+
+	Integer min() //15: Return the smallest number
+	{
+		if(head != null)
+		{
+			int temp = head.value;
+			Node cPtr = head;
+
+			while(cPtr.next != null)
+			{
+				if(cPtr.value < temp)
+					temp = cPtr.value;
+				cPtr = cPtr.next;
+			}
+			return temp;
+		}
+		return null;
 	}
 }

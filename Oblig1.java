@@ -6,7 +6,8 @@ public class Oblig1
 	{
 		//Declare variables for user interaction
 		Scanner input = new Scanner(System.in);
-		int option, data;
+		int option, data, target;
+		Integer temp;
 
 		//Greet user with program function
 		System.out.println("Welcome to the SingleLinkedList Program!");
@@ -68,15 +69,23 @@ public class Oblig1
 					break;
 				case 7:
 					System.out.print("Enter integer to add after: ");
-					int dataTarget = input.nextInt();
+					target = input.nextInt();
 					System.out.print("Integer to be added: ");
-					int dataValue = input.nextInt();
-					if(myList.addAfter(dataTarget, dataValue))
-						System.out.println(dataValue + " added after " + dataTarget + ".\n");
+					data = input.nextInt();
+					if(myList.addAfter(target, data))
+						System.out.println(data + " added after " + target + ".\n");
 					else
-						System.out.println(dataTarget + " was not found, no integer added.\n");
+						System.out.println(target + " was not found, no integer added.\n");
 					break;
 				case 8:
+					System.out.print("Enter integer to add in front of: ");
+					target = input.nextInt();
+					System.out.print("Integer to be added: ");
+					data = input.nextInt();
+					if(myList.addBefore(target, data))
+						System.out.println(data + " added before " + target + ".\n");
+					else
+						System.out.println(target + " was not found, no integer added.\n");
 					break;
 				case 9:
 					System.out.println("The list has " + myList.getLength()+" elements.\n");
@@ -101,10 +110,28 @@ public class Oblig1
 					System.out.println("Initialized list. Removed " + old + " elements.");
 					break;
 				case 14:
-					System.out.println(myList.max());
+					temp = myList.max();
+					if(temp != null)
+						System.out.println("Max. value is " + temp);
+					else
+						System.out.println("List is empty.\n");
 					break;
 				case 15:
+					temp = myList.min();
+					if(temp != null)
+						System.out.println("Min. value is " + temp);
+					else
+						System.out.println("List is empty.\n");
 					break;
+				case 20:
+		          for(int i=20; i>0; i--)
+			          {
+			           	myList.addFirst(i);
+			            myList.addFirst(4);
+			            myList.addFirst(4);
+			            myList.addFirst(i);
+			          }
+			          break;
 				case 100:
 					printMenu();
 					break;
