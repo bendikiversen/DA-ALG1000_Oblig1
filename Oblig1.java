@@ -88,18 +88,19 @@ public class Oblig1
 						System.out.println(target + " was not found, no integer added.\n");
 					break;
 				case 9:
-					System.out.println("The list has " + myList.getLength()+" elements.\n");
+					System.out.println("The list has " + myList.size()+" elements.\n");
 					break;
 				case 10:
-					if(myList.checkCount())
+					if(myList.checkCorrespondence())
 						System.out.println("Element count is correct.\n");
 					else
-						System.out.println("The programmer made a mistake: elementCount is off!");
+						System.out.println("The programmer made a mistake:"
+										+  "\n'elementCount' and number of elements do not correspond!!");
 					break;
 				case 11:
 					System.out.print("Enter integer to check for: ");
 					data = input.nextInt();
-					System.out.println("The number '"+ data + "' was found " + myList.numOfTarget(data)+" times.\n");
+					System.out.println("The number '"+ data + "' was found " + myList.occurences(data)+" times.\n");
 					break;
 				case 12:
 					printArray(myList.toArray());
@@ -112,26 +113,17 @@ public class Oblig1
 				case 14:
 					temp = myList.max();
 					if(temp != null)
-						System.out.println("Max. value is " + temp);
+						System.out.println("Maximum value is " + temp);
 					else
 						System.out.println("List is empty.\n");
 					break;
 				case 15:
 					temp = myList.min();
 					if(temp != null)
-						System.out.println("Min. value is " + temp);
+						System.out.println("Minimum value is " + temp);
 					else
 						System.out.println("List is empty.\n");
 					break;
-				case 20:
-		          for(int i=20; i>0; i--)
-			          {
-			           	myList.addFirst(i);
-			            myList.addFirst(4);
-			            myList.addFirst(4);
-			            myList.addFirst(i);
-			          }
-			          break;
 				case 100:
 					printMenu();
 					break;
@@ -174,8 +166,8 @@ public class Oblig1
 							+ " 11:\tCount occurences of given value.\n"
 							+ " 12:\tPrint list contents, 5 elements per line.\n"
 							+ " 13:\tInitialize list and print number of deleted elements.\n"
-							+ " 14:\tFind and print largest elements value.\n"
-							+ " 15:\tFind and print smallest elements value.\n\n"
+							+ " 14:\tFind and print the value of the largest element in list.\n"
+							+ " 15:\tFind and print the value of the smallest element in list.\n\n"
 							+ "100:\tShow this menu.\n"
 							+ "0:\tExit program\n"
 							+ "==============================================================");

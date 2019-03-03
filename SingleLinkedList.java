@@ -10,15 +10,9 @@ public class SingleLinkedList
 		elementCount = 0;
 	}
 
-	//Returns address of head (first node in list)
-	Node getHead()
-	{
-		return head;
-	}
-
 	boolean removeFirst() //1: Remove first element in list
 	{
-		if(elementCount > 0) //Check that the list has a head
+		if(head != null) //Check that the list has a head
 		{
 			head = head.next; //Sets head to the next node
 			elementCount--; //Element count decreases by one
@@ -29,7 +23,7 @@ public class SingleLinkedList
 
 	boolean removeLast() //2: Remove last element in list
 	{
-		if(elementCount > 0) //Check that the list has a head
+		if(head != null) //Check that the list has a head
 		{
 			if(head.next == null) //No following node after head
 			{
@@ -65,7 +59,7 @@ public class SingleLinkedList
 			else
 			{
 				Node cPtr = head;
-				while(cPtr.next.value != target && cPtr.next != null) //Iterate to target
+				while(cPtr.next.value != target && cPtr.next.next != null) //Iterate to target
 					cPtr = cPtr.next;
 
 				if(cPtr.next.value == target) //If target is in list, with more nodes following
@@ -87,7 +81,7 @@ public class SingleLinkedList
 
 	boolean removeAll(int target) //4: Remove all occurrences of given value
 	{
-		if(elementCount > 0)
+		if(head != null)
 		{
 			Node placeholder = new Node(0, head); //Take out head to another temp. list.
 			Node cPtr = placeholder;
@@ -116,10 +110,7 @@ public class SingleLinkedList
 
 	void addFirst(int value) //5: Add node with value to beginning of list
 	{
-		if(head == null)	//If the list has no head node, create it
-			head = new Node(value, null);
-		else				//If the list has a head node, replace it
-			head = new Node(value, head);
+		head = new Node(value, head);
 		elementCount++; //Increase element count by one
 	}
 
@@ -204,29 +195,18 @@ public class SingleLinkedList
 		return false;
 	}
 
-	int getLength() //9: Print list length
+	int size() //9: Print list length
 	{
 		return elementCount;
 	}
 
-	boolean checkCount() //10: Check number of nodes vs variable elementCount
+	boolean checkCorrespondence() //10: Check number of nodes vs variable elementCount
 	{
-		int counter = 0;
-		if(head!=null)
-		{
-
-			Node cPtr = head;
-			counter = 1;
-			while(cPtr.next != null)
-			{
-				counter++;
-				cPtr = cPtr.next;
-			}
-		}
-		return counter==elementCount;
+		int[] tempArray = toArray();
+		return tempArray.length==elementCount;
 	}
 
-	int numOfTarget(int target) //11: Count occurences of given value
+	int occurences(int target) //11: Count occurences of given value
 	{
 		int num = 0;
 		if(head != null)
