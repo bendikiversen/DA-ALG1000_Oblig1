@@ -146,12 +146,12 @@ public class SingleLinkedList
 			else
 			{
 				Node cPtr = head;
-				while(cPtr.next.value != target && cPtr.next != null) //Iterate to target
+				while(cPtr.value != target && cPtr.next != null) //Iterate to target
 					cPtr = cPtr.next;
 
-				if(cPtr.next.value == target) //If target is in list, with more nodes following
+				if(cPtr.value == target && cPtr.next != null) //If target is in list, with more nodes following
 				{
-					cPtr.next.next = new Node(value,cPtr.next);
+					cPtr.next = new Node(value,cPtr.next);
 					elementCount++;
 					return true;
 				}
