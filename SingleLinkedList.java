@@ -258,6 +258,8 @@ public class SingleLinkedList
 					temp = cPtr.value;
 				cPtr = cPtr.next;
 			}
+			if(cPtr.next == null && cPtr.value > temp)
+				temp = cPtr.value;
 			return temp;
 		}
 		return null;
@@ -276,6 +278,8 @@ public class SingleLinkedList
 					temp = cPtr.value;
 				cPtr = cPtr.next;
 			}
+			if(cPtr.next == null && cPtr.value < temp)
+				temp = cPtr.value;
 			return temp;
 		}
 		return null;
