@@ -211,15 +211,16 @@ public class SingleLinkedList
 		int num = 0;
 		if(head != null)
 		{
-		Node cPtr = head;
-			if(head.value == target)
-				num++;
-			while(cPtr.next != null)
+			Node cPtr = head;
+			while(cPtr.next != null) //Iterate through list
 			{
-				if(cPtr.value == target)
-					num++;
+				if(cPtr.value == target) //If current value matches target
+					num++; //Increase count by one
 				cPtr = cPtr.next;
 			}
+
+			if(cPtr.next == null && cPtr.value == target) //Value in last node
+				num++;
 		}
 		return num;
 	}
